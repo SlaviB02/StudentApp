@@ -8,12 +8,6 @@ pipeline {
             }
         }
 
-        stage('Set Up Node.js') {
-            steps {
-                tool name: 'NodeJS 18', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 npm install
