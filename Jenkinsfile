@@ -19,11 +19,6 @@ pipeline {
             }
         }
 
-        stage('Start Application') {
-            steps {
-                 bat 'npm start &'
-            }
-        }
 
         stage('Run Tests') {
             steps {
