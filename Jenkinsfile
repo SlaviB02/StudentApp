@@ -7,7 +7,6 @@ pipeline {
                 checkout scm
             }
         }
-
         stage('Set Up Node.js') {
             steps {
                 tool name: 'NodeJS 18', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
@@ -16,19 +15,20 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                npm install
+                 bat 'npm install'
             }
         }
 
         stage('Start Application') {
             steps {
-                npm start
+                 bat 'npm start'
             }
         }
 
         stage('Run Tests') {
             steps {
-                npm test
+                 bat 'npm test'
             }
         }
-    
+    }
+}
